@@ -1,40 +1,37 @@
 ---
-title: "Frank Hermosillo"
-image: "frank.jpg"
+title: "Catherine Hulshof"
+image: 
 links:
   - label: LinkedIn
-    url: "https://linkedin.com/"
+    url: "https://linkedin.com/catherinehulshof"
   - label: Twitter
-    url: "https://twitter.com/"
+    url: "https://twitter.com/BE_bilingue"
   - label: GitHub
-    url: "https://github.com/"
+    url: "https://github.com/catherinehulshof"
   - label: Email
-    url: "mailto:email@email.com"
+    #url: "mailto:catherine.hulshof@gmail.com"
 output:
   postcards::trestles
 ---
  
 ## Bio
 
-Frank Hermosillo studies neural networks and their applications at Google 
-Brain. His research focuses on differentiable network pruning approximation and 
-decentralized gradient inversion mechanics. He frequently collaborates with 
-researchers who study machine learning, computer vision, and cognitive science.
-His work has been featured in WIRED, The Atlantic, Newsweek, and The New York 
-Times Magazine.
+Dr. Hulshof studies biodiversity across spatial and temporal scales. Her research focuses on the forces that promote and inhibit biodiversity. She frequently collaborates with 
+researchers who study computer vision and ecosystem modelling.
+Her work has been funded by the National Science Foundation. 
 
 ## Education
 
-**Massachusetts Institute of Technology** | Cambridge, MA
+**University of Arizona** | Tucson, AZ
 
-Ph.D. in Computer Science | September 2009 - May 2014
+Ph.D. in Ecology and Evolutionary Biology | Minor in Global Change | September 2007 - January 2013
 
-**The University of California, Berkeley** | Berkeley, CA
+**University of Pennsylvania** | Philadelphia, PA
 
-B.S. in Computer Science | September 2005 - May 2009
+B.A. in Biology and Chemistry | September 2002 - May 2006
 
 ## Experience
 
-**Google Brain** | Principal Investigator | January 2018 - Present
+**Virginia Commonwealth University** | Assistant Professor | January 2018 - Present
 
-**Netflix** | Research Scientist | June 2014 - December 2017
+**University of Puerto Rico Mayaguez** | Assistant Professor | September 2014 - December 2017
