@@ -1,9 +1,8 @@
 ---
 title: "Catherine Hulshof"
-image: "Hulshof_Catherine.jpg"
 links:
   - label: LinkedIn
-    url: "https://www.linkedin.com/in/catherinehulshof/"
+    url: "https://linkedin.com/catherinehulshof"
   - label: Twitter
     url: "https://twitter.com/BE_bilingue"
   - label: GitHub
@@ -11,14 +10,14 @@ links:
   - label: Email
     url: "mailto:catherine.hulshof@gmail.com"
 output:
-  postcards::trestles
+  postcards
 ---
  
 ## Bio
 
-Dr. Hulshof's research focuses on how climate change impacts forests and the  form and function of forest organisms. She frequently collaborates with 
-researchers who study computer vision and ecosystem modeling.
-Her work has been funded by the National Science Foundation and the Puerto Rico Science Technology and Research Trust.
+Dr. Hulshof studies biodiversity across spatial and temporal scales. Her research focuses on the forces that promote and inhibit biodiversity. She frequently collaborates with 
+researchers who study computer vision and ecosystem modelling.
+Her work has been funded by the National Science Foundation. 
 
 ## Education
 
@@ -26,7 +25,7 @@ Her work has been funded by the National Science Foundation and the Puerto Rico 
 
 Ph.D. in Ecology and Evolutionary Biology | Minor in Global Change | September 2007 - January 2013
 
-**The University of Pennsylvania** | Philadelphia, PA
+**University of Pennsylvania** | Philadelphia, PA
 
 B.A. in Biology and Chemistry | September 2002 - May 2006
 
@@ -35,5 +34,3 @@ B.A. in Biology and Chemistry | September 2002 - May 2006
 **Virginia Commonwealth University** | Assistant Professor | January 2018 - Present
 
 **University of Puerto Rico Mayaguez** | Assistant Professor | September 2014 - December 2017
-
-**University of California Davis** | NSF Postdoctoral Research Fellow | January 2013 - September 2014

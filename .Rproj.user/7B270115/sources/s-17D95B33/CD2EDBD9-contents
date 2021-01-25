@@ -1,0 +1,119 @@
+
+# This code allows to calculate three differernt Functional 
+# diversity inidices (FDi) based on a raster file and a moving 
+# window approach as done in Rossi et al., 2019 with the focal
+# function from raster library v2.8-19  
+
+# An one-dimensional approach based on specific leaf are (SLA) 
+# was used to calcuate FDi
+
+# Functional richness, regularity and divergence per pixel based 
+# on SLA raster
+
+# Code developed by Christian Rossi
+# Created 18.06.2018
+
+##-----------------------------------------------------------------------------
+
+library(raster)
+library(rgdal)
+
+setwd("~/path/to/working/directory")
+
+# read input trait image
+# in our case a raster stack providing the inverse of SLA 
+# (dry matter content	Cm in	g/cm2) as 4th band derived from the inversion of 
+# the PROSAIL model with Sentinel-2 data (10 bands 20 m spatial resolution)
+
+spect <-
+  stack("sentinel_2_26062017_10bands_L2A_clip_veg_grassuncut_LUT.tif")
+
+trait.SLA <- 1 / (10 * spect[[4]]) # SLA [mm2/mg]
+
+
+# window to consider
+# assign same weight to each pixel, 3X3 pixel window
+fw.SLA <- matrix(1 / 9, nc = 3, nr = 3)
+
+# just pixel with neighbours are considered: if (any(is.na(x))){NaN} else {}
+
+# Functional richness  Mason et al.(2005)
+
+richness <- function(x, ...) {
+  if (any(is.na(x))) {
+    NaN
+  } else {
+    (max(x) - min(x)) / (maxValue(trait.SLA) - minValue(trait.SLA))
+  }
+}
+
+Functionalrichness.SLA <-
+  focal(trait.SLA, fw.SLA, fun = richness, pad = T)  
+
+# Functional regularity  Mouillot et al. (2005)
+
+regularity <- function(x, ...) {
+  if (any(is.na(x))) {
+    NaN
+  } else {
+    sum(replace((diff(sort(x)) / (2 * (length(
+      x
+    )))) / sum(diff(sort(x)) / (2 * (length(
+      x
+    )))),
+    (diff(sort(x)) / (2 * (length(
+      x
+    )))) / sum(diff(sort(x)) / (2 * (length(
+      x
+    )))) > 1 / (length(x) - 1),
+    1 / (length(x) - 1)
+    ))
+  }
+}
+Functionalregularity.SLA <-
+  focal(trait.SLA, fw.SLA, fun = regularity, pad = T)
+
+
+# Functional divergence Mason et al. (2003)
+
+divergence <- function(x, ...) {
+  if (any(is.na(x))) {
+    NaN
+  } else {
+    (2 / pi) * atan(5 * sum((1 / length(x)) * (log(x) - sum((1 / length(x)) *
+                                                              log(x)
+    )) ^ 2))
+  }
+}
+
+Functionaldivergence.SLA <-
+  focal(trait.SLA, fw.SLA, fun = divergence, pad = T)
+
+# write results
+
+
+writeRaster(
+  Functionaldivergence.SLA,
+  "Functionaldivergence_SLA_3x3_window.tif",
+  format = "GTiff",
+  overwrite = TRUE
+)
+
+writeRaster(
+  Functionalregularity.LDMC,
+  "Functionalregularity_SLA_3x3_window.tif",
+  format = "GTiff",
+  overwrite = TRUE
+)
+
+writeRaster(
+  Functionalrichness.SLA,
+  "Functionalrichness_SLA_3x3_window.tif",
+  format = "GTiff",
+  overwrite = TRUE
+)
+
+
+
+
+
